@@ -1,10 +1,6 @@
 import React, {useState} from 'react';
 
-const Formulario = () => {
-
-    const [busqueda, setBusqueda] = useState({
-        ciudad:''
-    });
+const Formulario = ({busqueda, setBusqueda, setConsultar}) => {
 
     const [error, setError] = useState(false);
 
@@ -29,12 +25,11 @@ const Formulario = () => {
 
         setError(false);
 
-        // pasarlo al componente principal
+        setConsultar(true);
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            {/*{ error ? <p className="red darken-4 error">Todos los campos son obligatorios</p> : null }*/}
+        <form onSubmit={handleSubmit} autocomplete="off">
             { error ? <p className="red darken-4 error">Todos los campos son obligatorios</p> : null }
             <div className="input-field col s12">
                 <input type="text"
@@ -50,7 +45,7 @@ const Formulario = () => {
             <div className="input-field col s12">
                 <input type="submit"
                        value="Buscar clima"
-                       className="waves-effect waves-light btn-large btn-block yellow accent-4"
+                       className="btn-large btn-block blue lighten-4"
                 />
             </div>
         </form>

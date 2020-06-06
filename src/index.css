@@ -7,8 +7,7 @@ nav .brand-logo {
   display: block;
   text-align: center;
   position: relative;
-  /*background-color: #FFFFFF;*/
-  background-color: #caf1f8;
+  /*background-color: #caf1f8;*/
   color: #02035f;
   font-weight: bold;
 }
@@ -73,7 +72,10 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
 }
 
 .btn-block {
-  display: block!important;
+  display: block;
+  color: #02035f;
+  font-weight: bold;
+  width: 100%;
 }
 
 .error {
