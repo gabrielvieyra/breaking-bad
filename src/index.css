@@ -11,6 +11,7 @@ nav .brand-logo {
   color: #02035f;
   font-weight: bold;
 }
+
 .input-field label {
   color: white;
 }
@@ -58,17 +59,32 @@ input[type=text]:not(.browser-default):focus:not([readonly]) + label {
 .card-panel h2 {
   font-size: 1.6rem;
   text-align: center;
+  color: #02035f;
+  font-weight: bold;
 }
 .card-panel p {
   text-align: center;
   font-size: 1.4rem;
 }
 .temperatura {
-  font-size: 4rem!important
+  font-size: 4rem!important;
+  color: #02035f;
 }
+
+.temperatura-max-min {
+  color: #02035f;
+}
+
+.temperatura-max-min span {
+  color: #02035f;
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .temperatura span {
   font-size: 2rem!important;
   vertical-align: super;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .btn-block {
