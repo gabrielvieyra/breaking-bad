@@ -2,16 +2,16 @@ import React, {useState, useEffect} from 'react';
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 import Clima from './components/Clima';
+import Error from './components/Error';
 
 function App() {
 
   const [busqueda, setBusqueda] = useState({
         ciudad:''
   });
-
   const [consultar, setConsultar] = useState(false);
-
   const [resultado, setResultado] = useState({});
+  const [error, setError] = useState(false);
 
   const { ciudad } = busqueda;
 
@@ -54,12 +54,28 @@ function App() {
 
         setResultado(data);
         setConsultar(false);
+
+        // detectar si hubo resultados correctos en la consulta
+        if(data.cod === "404") {
+          setError(true);
+        } else {
+          setError(false);
+        }
       }  
     }
 
     consultarAPI();
 
   },[consultar]);
+
+  // renderizado condicional de componentes
+  let componente;
+
+  if(error) {
+    componente = <Error mensaje="No hay resultados"/>
+  } else {
+    componente = <Clima resultado={resultado} />
+  }
 
   return (
     <>
@@ -75,8 +91,7 @@ function App() {
               />
             </div>
             <div className="col m6 s12">
-              <Clima resultado={resultado}
-              />
+              {componente}
             </div>
           </div>
         </div>
